@@ -9,6 +9,10 @@ We use this creator for add new request to action, reducer and saga files automa
 npm i @zaferatli/ra
 ```
 
+```
+npx @zaferatli/ra --actionName='GET_USERS' --dataStatus='true' --requestType='get' --createExample
+```
+
 After install Redux creator, you need add 
 
 ### Be sure of these before tart
@@ -33,13 +37,13 @@ After these steps you can create request strings.
 
 Get request for slider and response return data
 ```
-npx @zaferatli/ra --actionName='GET_SLIDER' --dataStatus='true' --requestType='get'
+npx @zaferatli/ra --actionName='GET_SLIDER' --dataStatus='true' --requestType='get' ---clearAllState
 ```
 
 
 Post request for edit user and response not return data
 ```
-npx @zaferatli/ra --actionName='UPDATE_USER_PROFILE' --dataStatus='false' --requestType='post'
+npx @zaferatli/ra --actionName='UPDATE_USER_PROFILE' --dataStatus='false' --requestType='post' --clearAllState
 
 ```
 First time of use cli tools ask from you define path of Action, Reducer and Saga files location.

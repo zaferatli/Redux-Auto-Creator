@@ -6,6 +6,7 @@ import Chalk from './lib/chalk.js'
 import Handlebars from 'handlebars'
 import ModuleDir from './utils/getModuleDir.js';
 import CopyTemplate from './utils/copyTemplates.js';
+import CopyExample from './utils/copyExample.js';
 import removeOptionsFromArgs from './utils/getParameters.js';
 import path from 'path';
 
@@ -28,9 +29,17 @@ const sagaHeaderLocator = cliParameters.filter(item=>item.KEY=='sagaHeaderLocato
 const sagaLocator = cliParameters.filter(item=>item.KEY=='sagaLocator')[0] ? cliParameters.filter(item=>item.KEY=='sagaLocator')[0].VALUE : 'export {handler};' ;
 const createTemplateLocal = cliParameters.filter(item=>item.KEY=='createTemplateLocal');
 const clearAllState = cliParameters.filter(item=>item.KEY=='clearAllState');
+const createExample = cliParameters.filter(item=>item.KEY=='createExample');
 
 if(clearAllState[0]){
   config.clear()
+}
+
+if(createExample[0]){
+ await CopyExample.get()
+ config.set('sagaFolderPath', './ra-redux/sagas.js');
+ config.set('reducerFolderPath', './ra-redux/reducer.js');
+ config.set('actionFolderPath', './ra-redux/actions.js');
 }
 
 if(createTemplateLocal[0]){
