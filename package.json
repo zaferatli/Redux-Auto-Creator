@@ -1,0 +1,47 @@
+{
+  "name": "@zaferatli/ra",
+  "version": "1.0.6",
+  "description": "React Native Redux Auto Creator CLI Kit",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "ra": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "redux"
+  ],
+  "author": "Serkan Doğanbaş & Zafer Atlı",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/auth-basic": "^1.4.8",
+    "@octokit/rest": "^19.0.5",
+    "chalk": "^5.2.0",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^6.0.0",
+    "figlet": "^1.5.2",
+    "handlebars": "^4.7.7",
+    "inquirer": "^9.1.4",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.7",
+    "path": "^0.12.7",
+    "simple-git": "^3.15.1",
+    "touch": "^3.1.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaferatli/Redux-Auto-Creator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zaferatli/Redux-Auto-Creator/issues"
+  },
+  "homepage": "https://github.com/zaferatli/Redux-Auto-Creator#readme"
+}

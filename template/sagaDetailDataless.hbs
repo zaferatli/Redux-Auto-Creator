@@ -1,0 +1,31 @@
+
+function* FUNC_{{actionName}}(action) {
+    try {
+        yield put({
+            type: $.{{actionName}}_REQUEST
+        })
+        const response = yield axios.{{type}}(`${apiUrl}/`);
+        if (response.data.status == 1) {
+            yield put({
+                type: $.{{actionName}}_REQUEST_SUCCESS,
+            })
+        }
+        else {
+            yield put({
+                type: $.{{actionName}}_REQUEST_FAILURE,
+                ERROR: "Hata oluştu."
+            })
+        }
+    } catch (error) {
+        yield put({
+            type: $.{{actionName}}_REQUEST_FAILURE,
+            ERROR: "Catch hata oluştu."
+        })
+    }
+    finally {
+        yield put({
+            type: $.{{actionName}}_REQUEST_END,
+        })
+    }
+}
+

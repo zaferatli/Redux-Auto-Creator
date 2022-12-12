@@ -1,0 +1,21 @@
+
+    case $.{{actionName}}_REQUEST: {
+      return {
+        ...state, {{actionName}}_REQUEST_STATUS: 1,
+      };
+    }
+    case $.{{actionName}}_REQUEST_SUCCESS: {
+      return {
+        ...state, {{actionName}}_REQUEST_STATUS: 2, {{actionName}}: action.DATA
+      };
+    }
+    case $.{{actionName}}_REQUEST_FAILURE: {
+      return {
+        ...state, {{actionName}}_REQUEST_STATUS: 3, {{actionName}}_REQUEST_STATUS_MESSAGE: action.ERROR
+      };
+    }
+    case $.{{actionName}}_REQUEST_END: {
+      return {
+        ...state, {{actionName}}_REQUEST_STATUS: 0,
+      };
+    }
